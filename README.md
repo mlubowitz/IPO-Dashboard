@@ -46,8 +46,8 @@ A full-stack web application for tracking and discovering upcoming Initial Publi
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd ipo-tracker
+git clone https://github.com/mlubowitz/IPO-Dashboard.git
+cd IPO-Dashboard
 ```
 
 ### 2. Install dependencies
@@ -178,7 +178,7 @@ npm start
 ## Project Structure
 
 ```
-ipo-tracker/
+IPO-Dashboard/
 ├── client/                 # React frontend
 │   ├── src/
 │   │   ├── components/    # Reusable UI components

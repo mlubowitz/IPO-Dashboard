@@ -1,4 +1,4 @@
-# IPO Tracker - Project Structure
+# IPO Dashboard - Project Structure
 
 ## Overview
 This is a full-stack TypeScript monorepo application with separate client and server directories.
@@ -6,7 +6,7 @@ This is a full-stack TypeScript monorepo application with separate client and se
 ## Directory Structure
 
 ```
-ipo-tracker/
+IPO-Dashboard/
 │
 ├── client/                          # React Frontend (Vite + TypeScript)
 │   ├── src/
