@@ -1,0 +1,37 @@
+// Prisma schema for IPO Dashboard
+// Run `npx prisma generate` after changes
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(cuid())
+  googleId  String     @unique
+  email     String     @unique
+  name      String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  favorites Favorite[]
+
+  @@index([googleId])
+  @@index([email])
+}
+
+model Favorite {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companySymbol String
+  companyName   String
+  ipoDate       DateTime
+  addedAt       DateTime @default(now())
+
+  @@unique([userId, companySymbol])
+  @@index([userId])
+}
